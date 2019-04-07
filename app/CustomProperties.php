@@ -11,6 +11,6 @@ class CustomProperties extends Model
 
     protected $fillable=[
         "idProduct",
-        "Attribute_value_id"
+        "attribute_value_id"
     ];
 }

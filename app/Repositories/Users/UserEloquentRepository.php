@@ -17,8 +17,8 @@ class UserEloquentRepository extends EloquentRepository implements UsersReposito
     {
         // TODO: Implement deleteImage() method.
         $User = User::findOrFail($id);
-        if(file_exists("upload/Avatar".$User->Avatar)){
-            if(File::delete("upload/Avatar".$User->Avatar)){
+        if(file_exists("upload/Avatar".$User->avatar)){
+            if(File::delete("upload/Avatar".$User->avatar)){
                 return 1;
             }else{
                 return 0;

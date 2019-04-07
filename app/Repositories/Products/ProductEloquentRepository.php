@@ -42,12 +42,18 @@ class ProductEloquentRepository extends EloquentRepository implements ProductRep
     }
 
     public function getInfo($id){
-        $ProductInfo = Products::SELECT('Info')->WHERE('id','=',$id)->get();
-        return $ProductInfo;
+        $ProductInfo = Products::SELECT('info')
+            ->WHERE('id','=',$id)
+            ->get();
+        if($ProductInfo){
+            return $ProductInfo;
+        }else{
+            return null;
+        }
     }
 
     public function getImages($idProduct){
-        $ImageProduct = ImageProducts::WHERE('idProduct','=',$idProduct)->SELECT('id','ImageProduct','idProduct')->get();
+        $ImageProduct = ImageProducts::WHERE('idProduct','=',$idProduct)->SELECT('id','imageProduct','idProduct')->get();
         return $ImageProduct;
     }
 

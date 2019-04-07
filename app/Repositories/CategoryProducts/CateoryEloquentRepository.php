@@ -20,8 +20,8 @@ class CateoryEloquentRepository extends EloquentRepository implements CategoryPr
         // TODO: Implement getParent_id() method.
         $getParentID = CategoriesProducts::SELECT(
             'id',
-            'Parent_id',
-            'NameCategory'
+            'parent_id',
+            'nameCategory'
         )->get();
         return $getParentID;
     }
@@ -30,7 +30,7 @@ class CateoryEloquentRepository extends EloquentRepository implements CategoryPr
     {
         // TODO: Implement getInfo() method.
         $getInfo = CategoriesProducts::SELECT(
-            'Info'
+            'info'
         )->get();
         return $getInfo;
     }

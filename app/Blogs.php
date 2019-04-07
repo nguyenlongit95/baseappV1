@@ -10,13 +10,13 @@ class Blogs extends Model
     protected $table="blogs";
 
     protected $fillable=[
-        "Title",
-        'Slug',
-        "Info",
-        "Description",
-        "Author",
-        "Tags",
-        "Image",
+        "title",
+        'slug',
+        "info",
+        "description",
+        "author",
+        "tags",
+        "image",
         "idCategoryBlog"
     ];
 }

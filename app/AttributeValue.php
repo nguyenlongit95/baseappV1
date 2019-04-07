@@ -11,6 +11,6 @@ class AttributeValue extends Model
 
     protected $fillable=[
         "idAttribute",
-        "Value"
+        "value"
     ];
 }

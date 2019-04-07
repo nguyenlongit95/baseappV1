@@ -53,7 +53,7 @@ class CustomPropertiesEloquentRepository extends EloquentRepository implements C
     * @return thí obiect
     */
     public function addAttribute($data){
-        if($data['attribute'] == null || $data['Value'] == null){
+        if($data['attribute'] == null || $data['value'] == null){
             return null;
         }
         $Attribute = new Attribute();
@@ -62,7 +62,7 @@ class CustomPropertiesEloquentRepository extends EloquentRepository implements C
         if($Attribute->save()){
             $AttributeValue = new AttributeValue();
             $AttributeValue->idAttribute = $Attribute->id;
-            $AttributeValue->Value = $data['Value'];
+            $AttributeValue->value = $data['value'];
             if($AttributeValue->save()){
                 return $AttributeValue;
             }else{
@@ -81,7 +81,7 @@ class CustomPropertiesEloquentRepository extends EloquentRepository implements C
         }
         $CustomProperties = new CustomProperties();
         $CustomProperties->idProduct = $data['idProduct'];
-        $CustomProperties->Attribute_value_id = $AttributeValue->id;
+        $CustomProperties->attribute_value_id = $AttributeValue->id;
         if($CustomProperties->save()){
             return "success";
         }else{

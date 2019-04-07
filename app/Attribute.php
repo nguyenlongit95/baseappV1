@@ -11,6 +11,7 @@ class Attribute extends Model
 
     protected $fillable = [
         "id",
-        "attribute"
+        "attribute",
+        "parent_id"
     ];
 }

@@ -15,12 +15,12 @@ class ContactEloquentRepository extends EloquentRepository implements ContactRep
     {
         // TODO: Implement changeState() method.
         $Contact = Contacts::findOrFail($id);
-        if($Contact->State == 0){
-            $Contact->State = 1;
+        if($Contact->state == 0){
+            $Contact->state = 1;
             $Contact->save();
             return 1;
-        }else if($Contact->State == 1){
-            $Contact->State = 0;
+        }else if($Contact->state == 1){
+            $Contact->state = 0;
             $Contact->save();
             return 1;
         }

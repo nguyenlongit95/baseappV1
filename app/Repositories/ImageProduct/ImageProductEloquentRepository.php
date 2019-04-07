@@ -16,7 +16,7 @@ class ImageProductEloquentRepository extends EloquentRepository implements Image
      * Thay đổi hình ảnh của sản phẩm đó
      * */
     public function getImages($idProduct,$numberPaginate){
-        $ImageProduct = ImageProducts::WHERE('idProduct','=',$idProduct)->SELECT('id','ImageProduct','idProduct')->paginate($numberPaginate);
+        $ImageProduct = ImageProducts::WHERE('idProduct','=',$idProduct)->SELECT('id','imageProduct','idProduct')->paginate($numberPaginate);
         return $ImageProduct;
     }
     /*
@@ -33,7 +33,7 @@ class ImageProductEloquentRepository extends EloquentRepository implements Image
     }
     public function addImage($image, $id){
         $ImageProduct = new ImageProducts();
-        $ImageProduct->ImageProduct = $image;
+        $ImageProduct->imageProduct = $image;
         $ImageProduct->idProduct = $id;
         if($ImageProduct->save()){
             return true;

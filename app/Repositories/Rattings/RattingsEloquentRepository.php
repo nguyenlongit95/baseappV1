@@ -28,8 +28,8 @@ class RattingsEloquentRepository extends EloquentRepository implements RattingsR
             $idProduct
         )->SELECT(
             "id",
-            "Ratting",
-            "Info"
+            "ratting",
+            "info"
         )->paginate(5);
         return $RattingProduct;
     }
@@ -42,7 +42,7 @@ class RattingsEloquentRepository extends EloquentRepository implements RattingsR
             "idProduct",
             "=",
             $idProduct
-        )->SELECT("Ratting")->avg("Ratting");
+        )->SELECT("ratting")->avg("ratting");
         return $StarProduct;
     }
 

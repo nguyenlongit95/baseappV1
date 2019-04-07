@@ -21,8 +21,8 @@ class CateoryEloquentRepository extends EloquentRepository implements CategoryBl
         // TODO: Implement getParent_id() method.
         $getParentID = CategoriesBlog::SELECT(
             'id',
-            'Parent_id',
-            'NameCategory'
+            'parent_id',
+            'nameCategory'
         )->get();
         return $getParentID;
     }
@@ -31,7 +31,7 @@ class CateoryEloquentRepository extends EloquentRepository implements CategoryBl
     {
         // TODO: Implement getInfo() method.
         $getInfo = CategoriesBlog::SELECT(
-            'Info'
+            'info'
         )->get();
         return $getInfo;
     }

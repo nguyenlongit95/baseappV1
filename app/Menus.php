@@ -9,13 +9,14 @@ class Menus extends Model
     protected $table="menus";
 
     protected $fillable=[
-        "Name",
-        "Slug",
-        "Parent_id",
-        "Level",
-        "Count_Child",
-        "Status",
-        "Info",
+        "name",
+        "slug",
+        "parent_id",
+        "level",
+        "count_child",
+        "status",
+        "info",
+        "sort",
         "created_at",
         "updated_at"
     ];

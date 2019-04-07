@@ -21,16 +21,16 @@ class CommentEloquentRepository extends EloquentRepository implements CommentRep
     {
         // TODO: Implement getReply() method.
         $Comment = Comments::WHERE(
-            "Parent_id",
+            "parent_id",
             "=",
             $id
         )->SELECT(
             "id",
             "idBlog",
             "idUser",
-            "Comment",
-            "Author",
-            "State",
+            "comment",
+            "author",
+            "state",
             "created_at"
         )->paginate(10);
         return $Comment;
@@ -50,7 +50,7 @@ class CommentEloquentRepository extends EloquentRepository implements CommentRep
     }
     public function updateState($id,$State){
         $Comment = Comments::findOrFail($id);
-        $Comment->State = $State;
+        $Comment->state = $State;
         if($Comment->update()){
             return 1;
         }else{

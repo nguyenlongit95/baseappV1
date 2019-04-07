@@ -30,10 +30,10 @@ class BlogEloquentRepository extends EloquentRepository implements BlogRepositor
     {
         // TODO: Implement deleteImageBlog() method.
         $ImageBlog = Blogs::find($id);
-        if(file_exists("upload/Blogs/".$ImageBlog->Image)){
-            if(FIle::delete("upload/Blogs/".$ImageBlog->Image)){
+        if(file_exists("upload/Blogs/".$ImageBlog->image)){
+            if(FIle::delete("upload/Blogs/".$ImageBlog->image)){
                 $ImageBlog = Blogs::find($id);
-                $ImageBlog->Image = "";
+                $ImageBlog->image = "";
                 $ImageBlog->update();
                 return 1;
             }else{

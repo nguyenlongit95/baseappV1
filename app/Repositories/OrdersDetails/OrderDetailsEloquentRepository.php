@@ -16,20 +16,24 @@ class OrderDetailsEloquentRepository extends EloquentRepository implements Order
     public function getAllPrice($idOrder)
     {
         // TODO: Implement getAllPrice() method.
-        $AllPrice = OrderDetails::WHERE("idOrder","=",$idOrder)->sum("Price")->get();
+        $AllPrice = OrderDetails::WHERE("idOrder","=",$idOrder)
+            ->sum("price")
+            ->get();
         return $AllPrice;
     }
     public function getProduct($idOrder)
     {
         // TODO: Implement getProduct() method.
-        $Product = DB::table("order_details")->WHERE("idOrder","=", $idOrder)->get();
+        $Product = DB::table("order_details")
+            ->WHERE("idOrder","=", $idOrder)
+            ->get();
         return $Product;
     }
     public function updateQuantity($id, $Quantity)
     {
         // TODO: Implement updateQuantity() method.
         $OrderDetails = OrderDetails::find($id);
-        $OrderDetails->Quantity = $Quantity;
+        $OrderDetails->quantity = $Quantity;
         if($OrderDetails->update()){
             return 1;
         }else{
