@@ -33,7 +33,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-edit fa-pen-alt"></i>
                                             </div>
-                                            <input type="text" name="Title" id="TitleBlog" class="form-control" placeholder="Title this blog">
+                                            <input type="text" name="title" id="TitleBlog" class="form-control" placeholder="Title this blog">
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -46,7 +46,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-edit fa-pen-alt"></i>
                                             </div>
-                                            <input type="text" name="Slug" id="Slug" class="form-control" placeholder="Slug this blog">
+                                            <input type="text" name="slug" id="Slug" class="form-control" placeholder="Slug this blog">
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -60,7 +60,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-align-left"></i>
                                             </div>
-                                            <textarea name="Info" class="form-control ckeditor" id="" cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur corporis, dignissimos dolorum eaque enim expedita facere, hic magnam necessitatibus numquam odit quidem similique sint, tempore. Deleniti itaque perspiciatis vero.</textarea>
+                                            <textarea name="info" class="form-control ckeditor" id="" cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur corporis, dignissimos dolorum eaque enim expedita facere, hic magnam necessitatibus numquam odit quidem similique sint, tempore. Deleniti itaque perspiciatis vero.</textarea>
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -74,7 +74,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-align-left"></i>
                                             </div>
-                                            <textarea name="Description" class="form-control ckeditor" id="Descriptions" cols="30" rows="30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur corporis, dignissimos dolorum eaque enim expedita facere, hic magnam necessitatibus numquam odit quidem similique sint, tempore. Deleniti itaque perspiciatis vero.</textarea>
+                                            <textarea name="description" class="form-control ckeditor" id="Descriptions" cols="30" rows="30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur corporis, dignissimos dolorum eaque enim expedita facere, hic magnam necessitatibus numquam odit quidem similique sint, tempore. Deleniti itaque perspiciatis vero.</textarea>
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -98,7 +98,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-align-left"></i>
                                 </div>
-                                <input type="text" name="Author" class="form-control" placeholder="Adminstator">
+                                <input type="text" name="author" class="form-control" placeholder="Adminstator">
                             </div>
                             <!-- /.input group -->
                         </div>
@@ -112,7 +112,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-align-left"></i>
                                 </div>
-                                <input type="text" name="Tags" class="form-control" placeholder="Blog">
+                                <input type="text" name="tags" class="form-control" placeholder="Blog">
                             </div>
                             <!-- /.input group -->
                         </div>
@@ -126,7 +126,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-align-left"></i>
                                 </div>
-                                <input type="file" name="Image" class="form-control" value="DefaultImage.jpg">
+                                <input type="file" name="image" class="form-control" value="DefaultImage.jpg">
                             </div>
                             <!-- /.input group -->
                         </div>
@@ -142,7 +142,7 @@
                                 </div>
                                 <SELECT class="form-control" name="idCategoryBlog">
                                     @foreach($CategoryBlogs as $categoryBlogs)
-                                        <OPTION value="{{ $categoryBlogs->id }}">{{ $categoryBlogs->NameCategory }}</OPTION>
+                                        <OPTION value="{{ $categoryBlogs->id }}">{{ $categoryBlogs->nameCategory }}</OPTION>
                                     @endforeach
                                 </SELECT>
                             </div>

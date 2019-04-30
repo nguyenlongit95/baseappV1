@@ -32,7 +32,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-edit fa-pen-alt"></i>
                                             </div>
-                                            <input type="text" name="NameCategory" class="form-control" value="{{ $CategoryBlogs->NameCategory }}">
+                                            <input type="text" name="nameCategory" class="form-control" value="{{ $CategoryBlogs->nameCategory }}">
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -46,7 +46,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-align-left"></i>
                                             </div>
-                                            <input type="text" name="Info" class="form-control" value="{{ $CategoryBlogs->Info }}">
+                                            <textarea type="text" name="info" class="form-control">{!! $CategoryBlogs->info !!}</textarea>
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -60,9 +60,9 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-compress"></i>
                                             </div>
-                                            <SELECT class="form-control" name="Parent_id">
+                                            <SELECT class="form-control" name="parent_id">
                                                 @foreach($Parent_id as $parent_id)
-                                                <OPTION <?php if ($parent_id->id == $CategoryBlogs->Parent_id) {echo "selected";}else{} ?> value="{{ $parent_id->id }}">{{ $parent_id->NameCategory }}</OPTION>
+                                                <OPTION <?php if ($parent_id->id == $CategoryBlogs->parent_id) {echo "selected";}else{} ?> value="{{ $parent_id->id }}">{{ $parent_id->nameCategory }}</OPTION>
                                                 @endforeach
                                             </SELECT>
                                         </div>

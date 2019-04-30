@@ -16,7 +16,7 @@ class ImageProductEloquentRepository extends EloquentRepository implements Image
      * Thay đổi hình ảnh của sản phẩm đó
      * */
     public function getImages($idProduct,$numberPaginate){
-        $ImageProduct = ImageProducts::WHERE('idProduct','=',$idProduct)->SELECT('id','imageProduct','idProduct')->paginate($numberPaginate);
+        $ImageProduct = ImageProducts::WHERE('idProduct','=',$idProduct)->SELECT('id','imageproduct','idProduct')->paginate($numberPaginate);
         return $ImageProduct;
     }
     /*

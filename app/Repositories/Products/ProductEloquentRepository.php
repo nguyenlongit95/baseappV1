@@ -53,7 +53,7 @@ class ProductEloquentRepository extends EloquentRepository implements ProductRep
     }
 
     public function getImages($idProduct){
-        $ImageProduct = ImageProducts::WHERE('idProduct','=',$idProduct)->SELECT('id','imageProduct','idProduct')->get();
+        $ImageProduct = ImageProducts::WHERE('idProduct','=',$idProduct)->SELECT('id','imageproduct','idProduct')->get();
         return $ImageProduct;
     }
 

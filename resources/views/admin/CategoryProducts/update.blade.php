@@ -32,7 +32,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-edit fa-pen-alt"></i>
                                             </div>
-                                            <input type="text" name="NameCategory" class="form-control" value="{{ $CategoryProduct->NameCategory }}">
+                                            <input type="text" name="nameCategory" class="form-control" value="{{ $CategoryProduct->nameCategory }}">
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -46,7 +46,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-align-left"></i>
                                             </div>
-                                            <input type="text" name="Info" class="form-control" value="{{ $CategoryProduct->Info }}">
+                                            <textarea class="form-control" type="text" name="info">{!! $CategoryProduct->info !!}</textarea>
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -62,7 +62,7 @@
                                             </div>
                                             <SELECT class="form-control" name="Parent_id">
                                                 @foreach($Parent_id as $parent_id)
-                                                <OPTION <?php if ($parent_id->id == $CategoryProduct->Parent_id) {echo "selected";}else{} ?> value="{{ $parent_id->id }}">{{ $parent_id->NameCategory }}</OPTION>
+                                                <OPTION <?php if ($parent_id->id == $CategoryProduct->parent_id) {echo "selected";}else{} ?> value="{{ $parent_id->id }}">{{ $parent_id->nameCategory }}</OPTION>
                                                 @endforeach
                                             </SELECT>
                                         </div>

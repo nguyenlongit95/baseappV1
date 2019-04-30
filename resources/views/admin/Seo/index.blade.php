@@ -7,7 +7,7 @@
 
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">List Blogs / <a href="admin/Blog/addBlogs">Add new</a></h3>
+                    <h3 class="box-title">List Link Seo / <a href="admin/Seo/addSeo">Add new</a></h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -16,45 +16,47 @@
                         <thead>
                         <tr>
                             <th>#</th>
+                            <th>Link</th>
                             <th>Title</th>
-                            <th>Info</th>
+                            <th>Keywords</th>
                             <th>Description</th>
-                            <th>Author</th>
-                            <th>Tags</th>
-                            <th>Image Blogs</th>
+                            <th>Heading</th>
+                            <th>Avatar</th>
+                            <th>Language</th>
                             <th class="text-center">Update</th>
                             <th class="text-center">Delete</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($Blogs as $blogs)
+                        @foreach($Seo as $seo)
                         <tr>
-                            <td>{{ $blogs->id }}</td>
+                            <td>{{ $seo->id }}</td>
                             <td>
-                                {{ $blogs->title }}
+                                {{ $seo->link }}
                             </td>
                             <td>
-                              {!! trimText($blogs->info, 100) !!}
+                                {{ $seo->title }}
+                            </td>
+                            <td>{{ $seo->keywords }}</td>
+                            <td>
+                                {!! trim($seo->description, 255) !!}
                             </td>
                             <td>
-                                {!!  trimText($blogs->description, 255) !!}
+                                {{ $seo->h1 }}
                             </td>
                             <td>
-                                {{ $blogs->author }}
+                                <img width="100px" src="{{ asset('upload/Seo/'.$seo->avatar) }}" alt="">
                             </td>
                             <td>
-                                {{ $blogs->tags }}
+                                {{ $seo->language }}
                             </td>
-                            <td>
-                                <img src="upload/Blogs/{{$blogs->image}}" height="100px" width="100px" alt="">
-                            </td>
-                            <td class="text-center"><a href="admin/Blog/updateBlog/{{$blogs->id}}" class="btn-warning padding510510">Update</a></td>
-                            <td class="text-center"><a href="admin/Blog/deleteBlog/{{$blogs->id}}" class="btn-danger padding510510">Delete</a></td>
+                            <td class="text-center"><a href="admin/Seo/updateSeo/{{$seo->id}}" class="btn-warning padding510510">Update</a></td>
+                            <td class="text-center"><a href="admin/Seo/deleteSeo/{{$seo->id}}" class="btn-danger padding510510">Delete</a></td>
                         </tr>
                         @endforeach
                         </tfoot>
                     </table>
-                    {!! $Blogs->render() !!}
+                    {!! $Seo->render() !!}
                 </div>
                 <!-- /.box-body -->
             </div>

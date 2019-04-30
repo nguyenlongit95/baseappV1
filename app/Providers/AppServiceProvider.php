@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Repositories\Rattings\RattingsRepositoryInterface;
+use App\Repositories\Rattings\SeoRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
@@ -48,8 +48,8 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Blogs\BlogEloquentRepository::class
         );
         $this->app->bind(
-            \App\Repositories\Rattings\RattingsRepositoryInterface::class,
-            \App\Repositories\Rattings\RattingsEloquentRepository::class
+            \App\Repositories\Rattings\SeoRepositoryInterface::class,
+            \App\Repositories\Rattings\SeoEloquentRepository::class
         );
         $this->app->bind(
             \App\Repositories\Orders\OrdersRepositoryInterface::class,
@@ -98,6 +98,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             \App\Repositories\Menus\MenuRepositoryInterface::class,
             \App\Repositories\Menus\MenuEloquentRepository::class
+        );
+        $this->app->bind(
+            \App\Repositories\Seo\SeoRepositoryInterface::class,
+            \App\Repositories\Seo\SeoEloquentRepository::class
         );
     }
 }

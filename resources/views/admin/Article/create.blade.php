@@ -33,7 +33,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-edit fa-pen-alt"></i>
                                         </div>
-                                        <input type="text" id="TitleArticle" name="Title" class="form-control" placeholder="...">
+                                        <input type="text" id="TitleArticle" name="title" class="form-control" placeholder="...">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -47,7 +47,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-align-left"></i>
                                         </div>
-                                        <textarea class="ckeditor" name="Info" id="" cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquam corporis dicta dolor, dolore dolorem eveniet ex facilis magnam molestiae officiis placeat quas quod sapiente sit temporibus velit voluptatibus.</textarea>
+                                        <textarea class="ckeditor" name="info" id="" cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquam corporis dicta dolor, dolore dolorem eveniet ex facilis magnam molestiae officiis placeat quas quod sapiente sit temporibus velit voluptatibus.</textarea>
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -61,7 +61,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-align-left"></i>
                                         </div>
-                                        <textarea class="form-control" name="Details" id="Details" cols="30" rows="30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquam corporis dicta dolor, dolore dolorem eveniet ex facilis magnam molestiae officiis placeat quas quod sapiente sit temporibus velit voluptatibus.</textarea>
+                                        <textarea class="form-control" name="details" id="Details" cols="30" rows="30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquam corporis dicta dolor, dolore dolorem eveniet ex facilis magnam molestiae officiis placeat quas quod sapiente sit temporibus velit voluptatibus.</textarea>
                                        ﻿
                                     </div>
                                     <!-- /.input group -->
@@ -86,7 +86,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-edit fa-pen-alt"></i>
                                     </div>
-                                    <input type="text" id="Slug" name="Slug" class="form-control" placeholder="...">
+                                    <input type="text" id="Slug" name="slug" class="form-control" placeholder="...">
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -99,7 +99,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-user"></i>
                                     </div>
-                                    <input type="text" name="Author" class="form-control" placeholder="...">
+                                    <input type="text" name="author" class="form-control" placeholder="...">
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -113,7 +113,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-compress"></i>
                                     </div>
-                                    <input type="text" name="Linked" class="form-control" placeholder="...">
+                                    <input type="text" name="linked" class="form-control" placeholder="...">
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -127,8 +127,8 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-lock"></i>
                                     </div>
-                                    Public: <input type="radio" name="Status" value="1">
-                                    Private: <input checked type="radio" name="Status" value="0">
+                                    Public: <input type="radio" name="status" value="1">
+                                    Private: <input checked type="radio" name="status" value="0">
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -136,13 +136,13 @@
 
                             <!-- phone mask -->
                             <div class="form-group">
-                                <label>Representative of the article <span style="color:red;">*</span></label>
+                                <label>Representative images of the article <span style="color:red;">*</span></label>
 
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <i class="fa fa-image"></i>
                                     </div>
-                                    <input type="file" name="Images" class="form-control" value="default.jpg">
+                                    <input type="file" name="images" class="form-control" value="default.jpg">
                                 </div>
                                 <!-- /.input group -->
                             </div>

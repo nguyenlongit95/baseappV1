@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Repositories\Products\ProductRepositoryInterface;
 use App\Repositories\ImageProduct\ImageProductRepositoryInterface;
-use App\Repositories\Rattings\RattingsRepositoryInterface;
+use App\Repositories\Rattings\SeoRepositoryInterface;
 use App\Repositories\Products\CustomPropertiesRepositoryInterface;
 
 class ProductController extends Controller
@@ -26,7 +26,7 @@ class ProductController extends Controller
     public function __construct(
         ProductRepositoryInterface $repositoryProduct,
         ImageProductRepositoryInterface $imageProductReporitory,
-        RattingsRepositoryInterface $rattingsReporitory,
+        SeoRepositoryInterface $rattingsReporitory,
         CustomPropertiesRepositoryInterface $customPropertiesRepository
     )
     {
@@ -70,7 +70,9 @@ class ProductController extends Controller
     }
 
     public function update(Request $request, $id){
+
         $data = $request->all();
+
         $Product = $this->ProductRepository->update($data,$id);
         if($Product == true){
             return redirect()->back()->with('thong_bao','Update an item success!');
@@ -221,8 +223,8 @@ class ProductController extends Controller
     public function deleteImage($id){
         // TODO: Implement deleteImage() method.
         $ImageProduct = $this->ImageProductRepository->find($id);
-        if(file_exists("upload/Product/".$ImageProduct->ImageProduct)){
-            if(File::delete("upload/Product/".$ImageProduct->ImageProduct)) {
+        if(file_exists("upload/Product/".$ImageProduct->imageproduct)){
+            if(File::delete("upload/Product/".$ImageProduct->imageproduct)) {
                 $deleteImage = $this->ImageProductRepository->delete($id);
                 if ($deleteImage) {
                     return 1;
@@ -272,7 +274,7 @@ class ProductController extends Controller
            "idProduct"=>$id,
            "parent_id"=>$request->parent_id,
            "attribute" => $request->attribute,
-           "Value" => $request->Value,
+           "value" => $request->value,
         );
         $AddAttribute = $this->CustomProperties->addAttribute($data);
         if($AddAttribute == null){
@@ -306,7 +308,7 @@ class ProductController extends Controller
 
             <option value="">----------</option>
             <?php foreach($AttributeValue as $value){ ?>
-            <option value="<?php echo $value->id; ?>"><?php echo $value->Value; ?></option>
+            <option value="<?php echo $value->id; ?>"><?php echo $value->value; ?></option>
             <?php } ?>
 
         <?php

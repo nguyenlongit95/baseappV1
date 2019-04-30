@@ -51,14 +51,14 @@ class BlogController extends Controller
 
     public function store(Request $request){
         $data = $request->all();
-        $file = $request->file("Image");
+        $file = $request->file("image");
         $fileExtendstion = $file->getClientOriginalExtension();
-        if($fileExtendstion == "jpg" || $fileExtendstion == "JPG" || $fileExtendstion == "jpeg" || $fileExtendstion == "JPEG"){
+        if($fileExtendstion == "jpg" || $fileExtendstion == "JPG" || $fileExtendstion == "jpeg" || $fileExtendstion == "JPEG" || $fileExtendstion == "png"){
             $fileName = $file->getClientOriginalName();
             $Name = str_random(5) . $fileName;
             if($file->move("upload/Blogs/",$Name)){
                 // Sau khi kiểm tra tất cả xong thì thêm hình ảnh tại đây
-                $data['Image'] = $Name;
+                $data['image'] = $Name;
             }else{
                 return redirect('admin/Blog/Blogs')->with('thong_bao','Add new item false, move image false!');
             }
@@ -92,15 +92,15 @@ class BlogController extends Controller
     public function changeImage(Request $request,$id){
         $ImageBlog = $this->BlogRepositories->deleteImageBlog($id);
         $this->validate($request,[
-           'Image'=>'required'
+           'image'=>'required'
         ],[
-            'Image.required'=>'Please chose a image'
+            'image.required'=>'Please chose a image'
         ]);
         if($ImageBlog == 1){
             // Tiến hành thêm mới hình ảnh tại đây
-            $file = $request->file("Image");
+            $file = $request->file("image");
             $fileExtendstion = $file->getClientOriginalExtension();
-            if($fileExtendstion == "jpg" || $fileExtendstion == "JPG" || $fileExtendstion == "jpeg" || $fileExtendstion == "JPEG"){
+            if($fileExtendstion == "jpg" || $fileExtendstion == "JPG" || $fileExtendstion == "jpeg" || $fileExtendstion == "JPEG" || $fileExtendstion == "png"){
                  $fileName = $file->getClientOriginalName();
                  $Name = str_random(5) . $fileName;
                  if($file->move("upload/Blogs/",$Name)){
@@ -118,9 +118,9 @@ class BlogController extends Controller
                 return redirect("admin/Blog/updateBlog/" . $id)->with('thong_bao','Wrong image format');
             }
         }else if($ImageBlog == 2){
-            $file = $request->file("Image");
+            $file = $request->file("image");
             $fileExtendstion = $file->getClientOriginalExtension();
-            if($fileExtendstion == "jpg" || $fileExtendstion == "JPG" || $fileExtendstion == "jpeg" || $fileExtendstion == "JPEG"){
+            if($fileExtendstion == "jpg" || $fileExtendstion == "JPG" || $fileExtendstion == "jpeg" || $fileExtendstion == "JPEG" || $fileExtendstion == "png"){
                 $fileName = $file->getClientOriginalName();
                 $Name = str_random(5) . $fileName;
                 if($file->move("upload/Blogs/",$Name)){

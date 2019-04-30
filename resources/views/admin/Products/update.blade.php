@@ -32,7 +32,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-edit fa-pen-alt"></i>
                                             </div>
-                                            <input type="text" name="NameProduct" class="form-control" value="{{ $Product->NameProduct }}">
+                                            <input type="text" name="product_name" class="form-control" value="{{ $Product->product_name }}">
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -45,7 +45,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-edit fa-pen-alt"></i>
                                             </div>
-                                            <input type="text" name="Price" class="form-control" value="{{ $Product->Price }}">
+                                            <input type="text" name="price" class="form-control" value="{{ $Product->price }}">
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -58,7 +58,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-edit fa-pen-alt"></i>
                                             </div>
-                                            <input type="number" name="Sales" class="form-control" value="{{ $Product->Sales }}">
+                                            <input type="number" name="sales" class="form-control" value="{{ $Product->sales }}">
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -71,7 +71,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-edit fa-pen-alt"></i>
                                             </div>
-                                            <input type="number" name="Quantity" class="form-control" value="{{ $Product->Quantity }}">
+                                            <input type="number" name="quantity" class="form-control" value="{{ $Product->quantity }}">
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -87,7 +87,7 @@
                                             </div>
                                             <SELECT class="form-control" name="idCategories">
                                                 @foreach($Category as $category)
-                                                    <OPTION <?php if($category->id == $Product->idCategories){echo "selected";} else{} ?> value="{{ $category->id }}">{{ $category->NameCategory }}</OPTION>
+                                                    <OPTION <?php if($category->id == $Product->idCategories){echo "selected";} else{} ?> value="{{ $category->id }}">{{ $category->nameCategory }}</OPTION>
                                                 @endforeach
                                             </SELECT>
                                         </div>
@@ -102,7 +102,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-edit fa-pen-alt"></i>
                                             </div>
-                                            <textarea class="form-control ckeditor" name="Info" id="info" cols="30" rows="5">{!! $Product->Info !!}</textarea>
+                                            <textarea class="form-control ckeditor" name="info" id="info" cols="30" rows="5">{!! $Product->info !!}</textarea>
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -115,7 +115,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-edit fa-pen-alt"></i>
                                             </div>
-                                            <textarea class="form-control ckeditor" name="Description" id="DescriptionProduct" cols="30" rows="30">{!! $Product->Description !!}</textarea>
+                                            <textarea class="form-control ckeditor" name="description" id="DescriptionProduct" cols="30" rows="30">{!! $Product->description !!}</textarea>
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -168,7 +168,7 @@
                                 <tr>
                                     <td class="text-center" style="padding-top:15%;">{{ $imageProduct->id }}</td>
                                     <td class="text-center">
-                                        <img width="100px" height="100px" class="reposive-image" src="upload/Product/{{$imageProduct->ImageProduct}}" alt="{{ $Product->NameProduct }}">
+                                        <img width="100px" height="100px" class="reposive-image" src="upload/Product/{{$imageProduct->imageproduct}}" alt="{{ $Product->product_name }}">
                                     </td>
                                     <td style="padding-top:15%;" class="text-center"><a href="admin/Product/deleteImage/{{$imageProduct->id}}" class="btn-danger padding510510">Delete</a></td>
                                 </tr>
@@ -191,12 +191,12 @@
                                     <td>{{ $rattingProduct->id }}</td>
                                     <td class="text-center">
                                         <?php
-                                        for($i=1; $i<=$rattingProduct->Ratting; $i++){
+                                        for($i=1; $i<=$rattingProduct->ratting; $i++){
                                             ?><i class="fa fa-star"></i><?php
                                         }
                                         ?>
                                     </td>
-                                    <td>{!! $rattingProduct->Info !!}</td>
+                                    <td>{!! $rattingProduct->info !!}</td>
                                 </tr>
                             @endforeach
                             </tfoot>
@@ -220,7 +220,7 @@
                                 <tbody>
                                 @foreach($CustomProperties as $customProperty)
                                     @foreach($CustomPropertiesValue as $customPropertyValue)
-                                    @if($customProperty->Attribute_value_id == $customPropertyValue->id)
+                                    @if($customProperty->attribute_value_id == $customPropertyValue->id)
                                         @foreach ($getAttribute as $attribute)
                                         @if($attribute->id == $customPropertyValue->idAttribute)
                                     <form action="admin/Product/updateCustomproperties/{{ $customPropertyValue->id }}" method="POST">
@@ -230,7 +230,7 @@
                                             <span>{{ $attribute->attribute }}</span>
                                         </td>
                                         <td>
-                                            <input type="text" class="form-control" name="Value" value="{{ $customPropertyValue->Value }}">
+                                            <input type="text" class="form-control" name="Value" value="{{ $customPropertyValue->value }}">
                                         </td>
                                         <td>
                                             <input type="submit" class="btn btn-warning form-control" value="Update">
@@ -276,7 +276,7 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <input type="text" class="form-control" name="Value" placeholder="Values">
+                                            <input type="text" class="form-control" name="value" placeholder="Values">
                                         </td>
                                         <td>
                                             <input type="submit" class="btn btn-primary" value="Add">
@@ -290,7 +290,7 @@
                                 <thead>
                                 <tr>
                                     <th>The child of</th>
-                                    <th class="text-center">Properties</th>
+                                    <th class="text-center">Attribute</th>
                                     <th>Values</th>
                                     <th>Method</th>
                                 </tr>
@@ -308,10 +308,10 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <input type="text" class="form-control" name="attribute" placeholder="Properties">
+                                            <input type="text" class="form-control" name="attribute" placeholder="Attribute">
                                         </td>
                                         <td>
-                                            <input type="text" class="form-control" name="Value" placeholder="Values">
+                                            <input type="text" class="form-control" name="value" placeholder="values">
                                         </td>
                                         <td>
                                             <input type="submit" class="btn btn-primary" value="Add">

@@ -69,12 +69,12 @@
                                     <!-- phone mask -->
                                     <div class="form-group">
                                         <label>Your avatar <span style="color:red;">*</span></label>
-                                        <img src="upload/Avatar/{{ $User->Avatar }}" height="100px" width="100px" alt="{{ $User->name }}">
+                                        <img src="upload/Avatar/{{ $User->avatar }}" height="100px" width="100px" alt="{{ $User->name }}">
                                         <div class="input-group">
                                             <div class="input-group-addon">
                                                 <i class="fa fa-align-left"></i>
                                             </div>
-                                            <input type="file" name="Avatar" class="form-control" value="{{ $User->Avatar }}">
+                                            <input type="file" name="avatar" class="form-control" value="{{ $User->avatar }}">
                                         </div>
                                         <!-- /.input group -->
                                     </div>
@@ -89,8 +89,8 @@
                                                 <i class="fa fa-compress"></i>
                                             </div>
                                             <SELECT class="form-control" name="Level">
-                                                <option <?php if($User->Level == 0 ){echo "selected";} ?> value="0">Customer</option>
-                                                <option <?php if($User->Level == 1 ){echo "selected";} ?> value="1">Adminstator</option>
+                                                <option <?php if($User->level == 0 ){echo "selected";} ?> value="0">Customer</option>
+                                                <option <?php if($User->level == 1 ){echo "selected";} ?> value="1">Adminstator</option>
                                             </SELECT>
                                         </div>
                                         <!-- /.input group -->

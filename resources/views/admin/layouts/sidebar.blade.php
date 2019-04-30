@@ -64,7 +64,7 @@
                     <li><a href="admin/Article/Articles"><i class="fa fa-address-card"></i> Article</a></li>
                     <li><a href="admin/Order/Orders"><i class="fa fa-shopping-cart"></i> Orders</a></li>
                     <li><a href="admin/User/Users"><i class="fa fa-users"></i> Users</a></li>
-                    <li><a href="admin/RoleAndPermission/RoleAndPermission"><i class="fa fa-users"></i> Roles and Permissions</a></li>
+                    <li><a href="admin/RoleAndPermission/RoleAndPermission"><i class="fa fa-user-circle"></i> Roles and Permissions</a></li>
                 </ul>
             </li>
             <li class="header">ORTHER NAVIGATION</li>
@@ -91,7 +91,8 @@
                     <li><a href="admin/Contact/Contacts"><i class="fa fa-compress"></i> Contacts</a></li>
                     <li><a href="admin/InfoAndLinked/index"><i class="fa fa-info-circle"></i> Info And Linked</a></li>
                     <li><a href="admin/Slider/Sliders"><i class="fa fa-slideshare"></i> Sliders</a></li>
-                    <li><a href="admin/API/APIs"><i class="fa fa-compress"></i> API</a></li>
+                    <li><a href="admin/Seo/index"><i class="fa fa-address-book"></i> Seo one page</a></li>
+                    <li><a href="admin/API/APIs"><i class="fa fa-qq"></i> API</a></li>
                 </ul>
             </li>
             <li><a href="admin/Documentation"><i class="fa fa-book"></i> <span>Documentation</span></a></li>

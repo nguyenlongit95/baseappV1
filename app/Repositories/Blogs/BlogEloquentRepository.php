@@ -47,7 +47,7 @@ class BlogEloquentRepository extends EloquentRepository implements BlogRepositor
     {
         // TODO: Implement insertImage() method.
         $ImageBlog = Blogs::find($id);
-        $ImageBlog->Image = $Image;
+        $ImageBlog->image = $Image;
         if($ImageBlog->update()){
             return 1;
         }else{

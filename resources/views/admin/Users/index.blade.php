@@ -18,7 +18,7 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Avatar </th>
+                            <th class="text-center">Avatar </th>
                             <th class="text-center">Update</th>
                             <th class="text-center">Delete</th>
                         </tr>
@@ -33,8 +33,8 @@
                             <td>
                                 {{ $user->email }}
                             </td>
-                            <td>
-                                <img src="upload/Avatar/{{ $user->Avatar }}" height="40px" width="40px" alt="{{ $user->name }}">
+                            <td class="text-center">
+                                <img src="upload/Avatar/{{ $user->avatar }}" height="40px" width="40px" alt="{{ $user->name }}">
                             </td>
                             <td class="text-center"><a href="admin/User/updateUser/{{$user->id}}" class="btn-warning padding510510">Update</a></td>
                             <td class="text-center"><a href="admin/User/deleteUser/{{$user->id}}" class="btn-danger padding510510">Delete</a></td>

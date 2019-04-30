@@ -97,6 +97,9 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
         Route::post('updateBlogs/{id}','BlogController@update');
 
         Route::post('changeImageBlogs/{id}','BlogController@changeImage');
+//        Route::post('changeImageBlogs/{id}',function(){
+//            dd("abcabc");
+//        });
 
         Route::get('deleteBlog/{id}','BlogController@destroy');
 
@@ -138,6 +141,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
         Route::post('addArticle','ArticleController@store');
 
         Route::get('updateArticle/{id}','ArticleController@getUpdate');
+        Route::post('updateArticle/{id}','ArticleController@update');
 
         Route::get('deleteArticle/{id}','ArticleController@destroy');
         // Ajax Title
@@ -196,6 +200,19 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
 
         Route::get("updateAPIs",'tokenAPIController@update');
     });
+
+    Route::group(['prefix'=>'Seo'],function(){
+        Route::get('index','SeoController@index');
+
+        Route::post('updateSeo/{id}','SeoController@update');
+        Route::get('updateSeo/{id}','SeoController@show');
+
+        Route::get('addSeo','SeoController@getStore');
+        Route::post('addSeo','SeoController@store');
+
+        Route::get('deleteSeo/{id}','SeoController@destroy');
+    });
+
     /*
      * Route cho Widgets
      * Menu header
