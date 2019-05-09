@@ -8,7 +8,7 @@ use App\Repositories\CategoryBlogs\CategoryBlogRepositoryInterface;
 
 class CategoryBlogController extends Controller
 {
-    /*
+    /**
      *
      * Tại đây ta gọi và sử dungj các Repository một cách đơn giản
      * Mỗi một phương thức gọi ta dùng 1 phương thức.
@@ -22,7 +22,7 @@ class CategoryBlogController extends Controller
         $this->CategoryRepository = $repository;
     }
 
-    /*
+    /**
      * Tại đây ta xây dựng CURD một cách ngắn gọn như sau
      * index
      * show
@@ -74,7 +74,7 @@ class CategoryBlogController extends Controller
         }
     }
 
-    /*
+    /**
      * Gọi đến các phương thức đặc biệt
      * Lấy Parent_id và id
      * Lấy Info
@@ -88,7 +88,7 @@ class CategoryBlogController extends Controller
         return $getInfoCategoryBlogs;
     }
 
-    /*
+    /**
      * Các phương thức mở rộng khác được viết ở đây
      * Phương thức getUpdate
      * */

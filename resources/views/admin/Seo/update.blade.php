@@ -127,7 +127,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-image"></i>
                                 </div>
-                                <img src="{{ asset('upload/Seo/'.$Seo->avatar) }}" alt="{{ $Seo->title }}">
+                                <img style="margin-left: 15px;" width="150" height="150" src="{{ asset('upload/Seo/'.$Seo->avatar) }}" alt="{{ $Seo->title }}">
                                 <input type="file" name="avatar" class="form-control" value="default.jpg">
                             </div>
                             <!-- /.input group -->
@@ -162,7 +162,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-paper-plane"></i>
                                 </div>
-                                <input type="submit" class="form-control" value="Submit">
+                                <input type="submit" class="form-control btn-primary" value="Submit">
                             </div>
                             <!-- /.input group -->
                         </div>
@@ -176,12 +176,9 @@
                         </p>
 
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsa repellat accusamus nemo fuga, neque asperiores consectetur tempora necessitatibus minima rem aspernatur. Beatae eius aliquam maxime distinctio id reprehenderit repudiandae.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsa repellat accusamus nemo fuga, neque asperiores consectetur tempora necessitatibus minima rem aspernatur.
                         </p>
 
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nemo ea maiores saepe quo minima, culpa sint incidunt perspiciatis omnis dolore accusamus adipisci quam architecto pariatur natus! Necessitatibus, quibusdam exercitationem!
-                        </p>
                     </div>
                 </div>
                 </form>

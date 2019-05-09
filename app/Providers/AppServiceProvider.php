@@ -48,8 +48,8 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Blogs\BlogEloquentRepository::class
         );
         $this->app->bind(
-            \App\Repositories\Rattings\SeoRepositoryInterface::class,
-            \App\Repositories\Rattings\SeoEloquentRepository::class
+            \App\Repositories\Rattings\RattingsRepositoryInterface::class,
+            \App\Repositories\Rattings\RattingsEloquentRepository::class
         );
         $this->app->bind(
             \App\Repositories\Orders\OrdersRepositoryInterface::class,

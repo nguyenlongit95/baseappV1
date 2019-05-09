@@ -9,7 +9,7 @@ use App\Repositories\Users\UsersRepositoryInterface;
 use App\Repositories\OrdersDetails\OrderDetilasRepositoryInterface;
 class OrderController extends Controller
 {
-    /*
+    /**
      * Tại đây ta xây dựng CURL của controller cho Orders
      * Xây dựng cả CỦRL cho các OrderDetails
      * */
@@ -67,7 +67,7 @@ class OrderController extends Controller
         }
     }
 
-    /*
+    /**
      * Các phương thức mở rộng của Order
      * Các phương thức get dữ liệu ra view
      * */
@@ -78,7 +78,7 @@ class OrderController extends Controller
         return view("admin.Orders.update",["Order"=>$Order,"User"=>$User,"OrderDetails"=>$OrderDetails]);
     }
 
-    /*
+    /**
      * Phương thức thêm cho các chi tiết của đơn hàng
      * Chỉ được phép sửa số lượng sản phẩm
      * Chỉ được phép xóa item

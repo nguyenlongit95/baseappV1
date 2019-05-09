@@ -5,15 +5,14 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Repositories\Products\ProductRepositoryInterface;
 use App\Repositories\ImageProduct\ImageProductRepositoryInterface;
-use App\Repositories\Rattings\SeoRepositoryInterface;
+use App\Repositories\Rattings\RattingsRepositoryInterface;
 use App\Repositories\Products\CustomPropertiesRepositoryInterface;
 
 class ProductController extends Controller
 {
-    //
-    /*
+    /**
      *
-     * Tại đây ta gọi và sử dungj các Repository một cách đơn giản
+     * Tại đây ta gọi và sử dụng các Repository một cách đơn giản
      * Mỗi một phương thức gọi ta dùng 1 phương thức.
      *
      * */
@@ -26,7 +25,7 @@ class ProductController extends Controller
     public function __construct(
         ProductRepositoryInterface $repositoryProduct,
         ImageProductRepositoryInterface $imageProductReporitory,
-        SeoRepositoryInterface $rattingsReporitory,
+        RattingsRepositoryInterface $rattingsReporitory,
         CustomPropertiesRepositoryInterface $customPropertiesRepository
     )
     {
@@ -36,7 +35,7 @@ class ProductController extends Controller
         $this->CustomProperties = $customPropertiesRepository;
     }
 
-    /*
+    /**
      * Tại đây ta xây dựng CURD một cách ngắn gọn như sau
      * index
      * show
@@ -112,7 +111,7 @@ class ProductController extends Controller
         }
     }
 
-    /*
+    /**
      * Gọi đến các phương thức đặc biệt
      * Lấy Categories
      * Lấy Info
@@ -131,7 +130,7 @@ class ProductController extends Controller
         $ImageProduct = $this->ImageProductRepository->getImages($id,2);
         return $ImageProduct;
     }
-    /*
+    /**
      * Các phương thức mở rộng khác được viết ở đây
      * Phương thức getUpdate
      * */
@@ -142,7 +141,7 @@ class ProductController extends Controller
         $CustomProperties = $this->CustomProperties->getCustomPropertiesOfProduct($id,2);
         $getAttribute = $this->CustomProperties->getAttribute();
         $getAttributeValue = $this->CustomProperties->getCustomPropertiesValue();
-        /*
+        /**
          * Tại đây sẽ lấy ra Ratting của sản phẩm
          * Tại đây sẽ lấy ra số lượng trung bình của sản phẩm
          * */
@@ -160,7 +159,7 @@ class ProductController extends Controller
         ]);
     }
 
-    /*
+    /**
      * Lam viec voi hinh anh
      * Them
      * Sua
@@ -239,7 +238,7 @@ class ProductController extends Controller
         }
     }
 
-    /*
+    /**
      * Route quản lý thuộc tính mở rộng của sản phẩm
      * Thêm sửa xóa
      * id của sản phẩm được truyền lên theo sản phẩm
@@ -251,7 +250,7 @@ class ProductController extends Controller
         $CustomProperties = $this->CustomProperties->updateCustomProperties($data,$id);
         return redirect()->back()->with("thong_bao",$CustomProperties);
     }
-    /*
+    /**
     * Khi thêm mới thì phải thêm vào 2 bảng(Attribute_value và Customproperties)
     */
     public function addCustomProperties($id, Request $request){
@@ -265,7 +264,7 @@ class ProductController extends Controller
         return redirect()->back()->with("thong_bao",$addCustomProperties);
     }
 
-    /*
+    /**
     * khi thêm mới 1 thuộc tính cho toàn hệ thống
     * Thì thêm mới thuộc tính đó cho sản phẩm hiện tại luôn
     */
@@ -299,7 +298,7 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    /*
+    /**
     * More function ajax
     */
     public function getAttributeValue(Request $request){

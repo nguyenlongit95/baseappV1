@@ -55,7 +55,7 @@ class UserController extends Controller
             $file = $request->file("Avatar");
             $fileExtendtion = $file->getClientOriginalExtension();
             if($fileExtendtion == "jpg" || $fileExtendtion == "jpeg" || $fileExtendtion == "png" || $fileExtendtion == "gif" || $fileExtendtion == "JPG" || $fileExtendtion == "PNG"){
-                /*
+                /**
                  * Kiểm tra và xóa hình ảnh cũ trong thư mục Avatar
                  * */
                 $checkImage = $this->UserRepository->deleteImage($id);
@@ -101,14 +101,14 @@ class UserController extends Controller
         }
     }
 
-    /*
+    /**
      * Các phương thức mở rộng khác được viết ở đây
      * Phương thức getUpdate
      * */
     public function getUpdate($id){
         $User = $this->show($id);
         $roles = Role::all();
-        /*
+        /**
          * Tại đây sử dụng QueryBuilder
          * Lấy ra các bản ghi đc nối với bảng Users và Roles
          * Trả về danh sách các bản ghi đó

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class WidgetsController extends Controller
 {
-    /*
+    /**
      * Widgets dùng để quản lý các thành phần cở bản của giao diện người dùng
      * Menus
      * Header

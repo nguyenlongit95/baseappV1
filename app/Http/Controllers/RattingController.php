@@ -19,7 +19,7 @@ class RattingController extends Controller
         $this->ProductRepositories = $productReporitory;
     }
 
-    /*
+    /**
      * Tại đây ta xây dựng CURD một cách ngắn gọn như sau
      * index
      * show

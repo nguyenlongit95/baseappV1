@@ -9,7 +9,7 @@ use App\Repositories\Articles\ArticleRepositoryInterface;
 
 class ArticleController extends Controller
 {
-    /*
+    /**
      *
      * Tại đây ta gọi và sử dungj các Repository một cách đơn giản
      * Mỗi một phương thức gọi ta dùng 1 phương thức.
@@ -23,7 +23,7 @@ class ArticleController extends Controller
         $this->ArticleRepository = $ArticleRepository;
     }
 
-    /*
+    /**
      * Tại đây ta xây dựng CURD một cách ngắn gọn như sau
      * index
      * show
@@ -128,7 +128,7 @@ class ArticleController extends Controller
         }
     }
 
-    /*
+    /**
      * Các phương thức mở rộng khác được viết ở đây
      * Phương thức getUpdate
      * */
@@ -137,7 +137,7 @@ class ArticleController extends Controller
         return view('admin.Article.update',['Article'=>$Article]);
     }
 
-    /*
+    /**
      * Ajax cho Slug
      * */
     public function postAjaxSlug(Request $request){
